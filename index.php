@@ -45,8 +45,15 @@
 
                 <!-- inserisci ToDo -->
                 <div class="input-group col-12 mx-auto mb-4">
-                    <input type="text" class="form-control" placeholder="Task you need to add" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-outline-secondary" type="button" id="button-addon2">add</button>
+                    <input
+                        v-model.trim="toDoNew"
+                        @keyup.enter="updateList"
+                        type="text"
+                        class="form-control"
+                        placeholder="Task you need to add"
+                        aria-label="Recipient's username"
+                        aria-describedby="button-addon2">
+                    <button @click="updateList" class="btn btn-outline-secondary" type="button" id="button-addon2">add</button>
                 </div>
             </div>
         </div>

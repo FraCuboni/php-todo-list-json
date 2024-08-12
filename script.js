@@ -5,6 +5,7 @@ createApp({
         return {
             apiUrl: 'server.php',
             list: [],
+            toDoNew: '',
         };
     },
     methods: {
@@ -17,6 +18,10 @@ createApp({
                 .catch(err => {
                     console.error("Errore", error);
                 });
+        },
+
+        updateList() {
+            console.log(this.toDoNew)
         }
     },
     mounted() {
