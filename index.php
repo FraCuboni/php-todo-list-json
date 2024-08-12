@@ -9,13 +9,16 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- LINK -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="style.css">
 
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- VUE -->
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3.2.31/dist/vue.global.js"></script>
+    <script>
+        console.log('vue caricato')
+    </script>
 
     <!-- AXIOS -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -31,16 +34,10 @@
                 <!-- ToDoList -->
                 <div class="col-12 mx-auto mb-4">
                     <ul class="list-group">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <span class="mr-3">A list item</span>
-                            <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <span class="mr-3">A second list item</span>
-                            <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <span class="mr-3">A third list item</span>
+                        <li
+                            v-for="(task, index) in list"
+                            class="list-group-item d-flex justify-content-between align-items-center">
+                            <span class="mr-3">{{task}}</span>
                             <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
                         </li>
                     </ul>
@@ -54,6 +51,7 @@
             </div>
         </div>
 
+        <script src="script.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
